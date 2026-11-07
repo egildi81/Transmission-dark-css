@@ -284,28 +284,28 @@ div.dialog_container div.dialog_window a:hover {
    Preferences dialog tabs
    ========================================================================== */
 
-#prefs-dialog .ui-tabs-nav {
+.ui-tabs .ui-tabs-nav {
     background: #292929 !important;
     border-color: #444 !important;
 }
 
-#prefs-dialog .ui-tabs-nav li {
-    background: #383838 !important;
-    border-color: #555 !important;
-}
-
-#prefs-dialog .ui-tabs-nav li a {
+/* Tab labels: jQuery UI colors links inside states (.ui-state-default a),
+   which overrides the color set on the tab itself */
+.ui-tabs .ui-tabs-nav li a,
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
     color: #dedede !important;
 }
 
-#prefs-dialog .ui-tabs-nav li.ui-tabs-active,
-#prefs-dialog .ui-tabs-nav li.ui-tabs-selected {
-    background: #242424 !important;
-    border-bottom-color: #242424 !important;
-}
-
-#prefs-dialog .ui-tabs-nav li.ui-tabs-active a,
-#prefs-dialog .ui-tabs-nav li.ui-tabs-selected a {
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs .ui-tabs-nav li.ui-state-hover a,
+.ui-state-hover a,
+.ui-state-focus a,
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
     color: #fff !important;
 }
 
