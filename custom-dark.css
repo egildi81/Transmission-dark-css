@@ -1,4 +1,12 @@
-/* Transmission 3.00 - Dark theme */
+/*
+ * Transmission-dark-css
+ * Dark theme for Transmission 3.00 WebUI
+ *
+ * Based on the Transmission WebUI stylesheet.
+ * Original project: https://github.com/transmission/transmission
+ *
+ * SPDX-License-Identifier: GPL-3.0-only
+ */
 
 /* Global */
 html, body {
