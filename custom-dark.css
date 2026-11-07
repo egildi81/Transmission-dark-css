@@ -8,13 +8,40 @@
  * SPDX-License-Identifier: GPL-3.0-only
  */
 
-/* Global */
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+html {
+    /* Native dark controls: scrollbars, checkboxes, selects, options */
+    color-scheme: dark;
+}
+
 html, body {
     background: #1e1e1e;
     color: #dedede;
 }
 
-/* Toolbar, statusbar, footer */
+a {
+    color: #8ab4f8;
+}
+
+/* Remove light text shadows designed for the original light theme */
+div#toolbar *,
+#statusbar *,
+ul.torrent_list *,
+div#torrent_inspector *,
+div.torrent_footer *,
+div.dialog_container *,
+.ui-widget,
+.ui-widget * {
+    text-shadow: none !important;
+}
+
+/* ==========================================================================
+   Toolbar, statusbar, footer
+   ========================================================================== */
+
 div#toolbar,
 #statusbar,
 div.torrent_footer {
@@ -24,7 +51,25 @@ div.torrent_footer {
     border-color: #444;
 }
 
-/* Torrent list */
+/* Optional: uncomment if the top toolbar icons are too dark to see
+div#toolbar > div {
+    filter: invert(1);
+}
+*/
+
+/* Footer buttons: invert the light background and dark icons.
+   Note: state colors are inverted too (e.g. the active turtle button). */
+div.torrent_footer #settings_menu,
+div.torrent_footer #prefs-button,
+div.torrent_footer #turtle-button,
+div.torrent_footer #compact-button {
+    filter: invert(1);
+}
+
+/* ==========================================================================
+   Torrent list
+   ========================================================================== */
+
 div#torrent_container {
     background: #1e1e1e;
 }
@@ -53,7 +98,18 @@ ul.torrent_list li.torrent div.torrent_name.paused {
     color: #999;
 }
 
-/* Inspector */
+/* Progress bar: darken the remaining (incomplete) part only,
+   the colored "complete" part keeps its original state colors */
+ul.torrent_list div.torrent_progress_bar.incomplete {
+    background-color: #3a3a3a !important;
+    background-image: none !important;
+    border-color: #555 !important;
+}
+
+/* ==========================================================================
+   Inspector
+   ========================================================================== */
+
 div#torrent_inspector {
     background: #242424;
     color: #ddd;
@@ -76,7 +132,74 @@ div#torrent_inspector ul.tier_list table {
     color: #bbb;
 }
 
-/* Dialogs */
+/* Peer table headers */
+div#torrent_inspector th {
+    background: #292929 !important;
+    background-image: none !important;
+    color: #eee !important;
+    border-color: #444 !important;
+}
+
+/* Inspector tab buttons */
+#torrent_inspector #inspector-tabs > * {
+    background-color: #383838 !important;
+    border-color: #555 !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Keep the icons, remove the gradients */
+#torrent_inspector #inspector-tab-info {
+    background-image: url("images/inspector-info.png") !important;
+}
+
+#torrent_inspector #inspector-tab-peers {
+    background-image: url("images/inspector-peers.png") !important;
+}
+
+#torrent_inspector #inspector-tab-trackers {
+    background-image: url("images/inspector-trackers.png") !important;
+}
+
+#torrent_inspector #inspector-tab-files {
+    background-image: url("images/inspector-files.png") !important;
+}
+
+#torrent_inspector #inspector-tabs > *:hover {
+    background-color: #484848 !important;
+}
+
+#torrent_inspector #inspector-tabs > *.selected {
+    background-color: #40536a !important;
+    border-color: #60758d !important;
+}
+
+/* File priority buttons */
+div.file-priority-radiobox > * {
+    background-color: #383838 !important;
+    border-color: #555 !important;
+}
+
+div.file-priority-radiobox > div.low {
+    background-image: url("images/file-priority-low.png") !important;
+}
+
+div.file-priority-radiobox > div.normal {
+    background-image: url("images/file-priority-normal.png") !important;
+}
+
+div.file-priority-radiobox > div.high {
+    background-image: url("images/file-priority-high.png") !important;
+}
+
+div.file-priority-radiobox > *.selected {
+    background-color: #40536a !important;
+}
+
+/* ==========================================================================
+   Dialogs
+   ========================================================================== */
+
 div.dialog_container {
     color: #ddd;
 }
@@ -100,7 +223,10 @@ div.dialog_container div.dialog_window a:hover {
     background: #484848;
 }
 
-/* jQuery UI */
+/* ==========================================================================
+   jQuery UI (menus, dialogs, tabs, buttons)
+   ========================================================================== */
+
 .ui-widget,
 .ui-widget-content,
 .ui-widget-header,
@@ -113,36 +239,51 @@ div.dialog_container div.dialog_window a:hover {
     border-color: #444;
 }
 
-.ui-state-default {
-    background: #383838;
-    background-image: none;
+.ui-widget-content a,
+.ui-widget-header a {
     color: #ddd;
-    border-color: #555;
 }
 
+/* Default state */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button {
+    background: #383838 !important;
+    background-image: none !important;
+    border-color: #555 !important;
+    color: #ddd !important;
+}
+
+/* Hover / keyboard focus (includes context menu items) */
 .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-hover,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover {
+    background: #484848 !important;
+    background-image: none !important;
+    border-color: #60758d !important;
+    color: #fff !important;
+}
+
+/* Active / highlighted */
 .ui-state-active,
-.ui-state-highlight {
-    background: #40536a;
-    background-image: none;
-    color: #fff;
-    border-color: #60758d;
+.ui-state-highlight,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    background: #40536a !important;
+    background-image: none !important;
+    border-color: #60758d !important;
+    color: #fff !important;
 }
 
-/* Form elements */
-input,
-select,
-textarea {
-    background-color: #333;
-    color: #eee;
-    border: 1px solid #555;
-}
+/* ==========================================================================
+   Preferences dialog tabs
+   ========================================================================== */
 
-input::placeholder {
-    color: #aaa;
-}
-
-/* Onglets des préférences */
 #prefs-dialog .ui-tabs-nav {
     background: #292929 !important;
     border-color: #444 !important;
@@ -154,7 +295,7 @@ input::placeholder {
 }
 
 #prefs-dialog .ui-tabs-nav li a {
-    color: #ddd !important;
+    color: #dedede !important;
 }
 
 #prefs-dialog .ui-tabs-nav li.ui-tabs-active,
@@ -163,107 +304,23 @@ input::placeholder {
     border-bottom-color: #242424 !important;
 }
 
-/* Boutons jQuery UI */
-.ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default,
-.ui-button {
-    background: #383838 !important;
-    background-image: none !important;
-    border-color: #555 !important;
-    color: #ddd !important;
-}
-
-.ui-widget-content .ui-state-hover,
-.ui-widget-header .ui-state-hover,
-.ui-button:hover {
-    background: #484848 !important;
+#prefs-dialog .ui-tabs-nav li.ui-tabs-active a,
+#prefs-dialog .ui-tabs-nav li.ui-tabs-selected a {
     color: #fff !important;
 }
 
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active {
-    background: #40536a !important;
-    color: #fff !important;
+/* ==========================================================================
+   Form elements
+   ========================================================================== */
+
+input,
+select,
+textarea {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
 }
 
-/* Fond des boutons inspecteur */
-#torrent_inspector #inspector-tabs > * {
-    background-color: #383838 !important;
-    border-color: #555 !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Conserver les icônes, retirer les dégradés */
-#torrent_inspector #inspector-tab-info {
-    background-image: url("images/inspector-info.png") !important;
-}
-
-#torrent_inspector #inspector-tab-peers {
-    background-image: url("images/inspector-peers.png") !important;
-}
-
-#torrent_inspector #inspector-tab-trackers {
-    background-image: url("images/inspector-trackers.png") !important;
-}
-
-#torrent_inspector #inspector-tab-files {
-    background-image: url("images/inspector-files.png") !important;
-}
-
-/* Bouton sélectionné */
-#torrent_inspector #inspector-tabs > *.selected {
-    background-color: #40536a !important;
-    border-color: #60758d !important;
-}
-
-/* Survol */
-#torrent_inspector #inspector-tabs > *:hover {
-    background-color: #484848 !important;
-}
-
-div.file-priority-radiobox > * {
-    background-color: #383838 !important;
-    border-color: #555 !important;
-}
-
-div.file-priority-radiobox > div.low {
-    background-image: url("images/file-priority-low.png") !important;
-}
-
-div.file-priority-radiobox > div.normal {
-    background-image: url("images/file-priority-normal.png") !important;
-}
-
-div.file-priority-radiobox > div.high {
-    background-image: url("images/file-priority-high.png") !important;
-}
-
-div.file-priority-radiobox > *.selected {
-    background-color: #40536a !important;
-}
-
-/* Preferences - Tab text */
-#prefs-tab-general a,
-#prefs-tab-speed a,
-#prefs-tab-peers a,
-#prefs-tab-network a {
-    color: #dedede !important;
-    text-shadow: none !important;
-}
-
-/* Active tab */
-#prefs-tab-general.ui-tabs-active a,
-#prefs-tab-speed.ui-tabs-active a,
-#prefs-tab-peers.ui-tabs-active a,
-#prefs-tab-network.ui-tabs-active a {
-    color: #ffffff !important;
-}
-
-/* Footer buttons - Dark background and light icons */
-div.torrent_footer #settings_menu,
-div.torrent_footer #prefs-button,
-div.torrent_footer #turtle-button,
-div.torrent_footer #compact-button {
-    filter: invert(1);
+input::placeholder {
+    color: #aaa;
 }
