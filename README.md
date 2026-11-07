@@ -1,4 +1,7 @@
 # Transmission-dark-css
+
+![Transmission dark theme preview](preview.png)
+
 Lightweight CSS override for the Transmission 3.x web client. Refreshes the default transmission-daemon WebUI with a Dark theme. Just add the stylesheet and reload.
 
 Originally tested with **transmission-daemon 3.00 (bb6b5a062e)**. Compatibility with other versions has not been verified.
