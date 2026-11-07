@@ -2,9 +2,9 @@
 
 ![Transmission dark theme preview](preview.png)
 
-Lightweight CSS override for the Transmission 3.x web client. Refreshes the default transmission-daemon WebUI with a Dark theme. Just add the stylesheet and reload.
+Lightweight CSS override for the Transmission 3.x web client. Refreshes the default transmission-daemon WebUI with a dark theme. Just add the stylesheet and reload.
 
-Originally tested with **transmission-daemon 3.00 (bb6b5a062e)**. Compatibility with other versions has not been verified.
+Originally tested with **transmission-daemon 3.00 (bb6b5a062e)**. Compatibility with other versions has not been verified. Not compatible with Transmission 4.x, which ships a completely new WebUI.
 
 ## Installation
 
@@ -32,7 +32,7 @@ Originally tested with **transmission-daemon 3.00 (bb6b5a062e)**. Compatibility 
 
 - The theme overrides the existing interface styles; it does not replace Transmission's original CSS files.
 - Transmission package updates may overwrite `index.html`, requiring the link to be added again.
-- The installation paths shown are for Debian/Ubuntu packages and may differ on other distributions
+- The installation paths shown are for Debian/Ubuntu packages and may differ on other distributions.
 
 ## License
 
