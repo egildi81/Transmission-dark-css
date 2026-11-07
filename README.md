@@ -30,3 +30,11 @@ Originally tested with **transmission-daemon 3.00 (bb6b5a062e)**. Compatibility 
 - The theme overrides the existing interface styles; it does not replace Transmission's original CSS files.
 - Transmission package updates may overwrite `index.html`, requiring the link to be added again.
 - The installation paths above are based on the original project instructions and may differ between installations.
+
+## License
+
+This project is licensed under the GNU General Public License
+version 3 (GPL-3.0-only). See [COPYING](COPYING).
+
+Based on the Transmission WebUI stylesheet:
+https://github.com/transmission/transmission
