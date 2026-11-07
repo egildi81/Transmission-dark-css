@@ -1,0 +1,261 @@
+/* Transmission 3.00 - Dark theme */
+
+/* Global */
+html, body {
+    background: #1e1e1e;
+    color: #dedede;
+}
+
+/* Toolbar, statusbar, footer */
+div#toolbar,
+#statusbar,
+div.torrent_footer {
+    background: #292929;
+    background-image: none;
+    color: #dedede;
+    border-color: #444;
+}
+
+/* Torrent list */
+div#torrent_container {
+    background: #1e1e1e;
+}
+
+ul.torrent_list li.torrent {
+    background: #252525;
+    color: #bbb;
+    border-color: #383838;
+}
+
+ul.torrent_list li.torrent.even {
+    background: #202020;
+}
+
+ul.torrent_list li.torrent.selected {
+    background: #30445b;
+    color: #fff;
+}
+
+ul.torrent_list li.torrent div.torrent_name,
+ul.torrent_list li.torrent.compact div.torrent_name {
+    color: #e5e5e5;
+}
+
+ul.torrent_list li.torrent div.torrent_name.paused {
+    color: #999;
+}
+
+/* Inspector */
+div#torrent_inspector {
+    background: #242424;
+    color: #ddd;
+    border-color: #444;
+}
+
+div#torrent_inspector div.tracker_host,
+div#torrent_inspector div.inspector_torrent_file_list_entry_name {
+    color: #e5e5e5;
+}
+
+div#torrent_inspector li.inspector_tracker_entry.odd,
+div#torrent_inspector li.inspector_torrent_file_list_entry.even,
+tr.inspector_peer_entry.odd {
+    background: #303030;
+}
+
+div#torrent_inspector ul.tier_list .tracker_activity,
+div#torrent_inspector ul.tier_list table {
+    color: #bbb;
+}
+
+/* Dialogs */
+div.dialog_container {
+    color: #ddd;
+}
+
+div.dialog_container div.dialog_window {
+    background: #292929;
+    color: #ddd;
+}
+
+div.dialog_container div.dialog_window h2.dialog_heading {
+    color: #eee;
+}
+
+div.dialog_container div.dialog_window a {
+    background: #383838;
+    color: #eee;
+    border-color: #555;
+}
+
+div.dialog_container div.dialog_window a:hover {
+    background: #484848;
+}
+
+/* jQuery UI */
+.ui-widget,
+.ui-widget-content,
+.ui-widget-header,
+.ui-menu,
+.ui-dialog,
+.ui-tabs-panel {
+    background: #292929;
+    background-image: none;
+    color: #ddd;
+    border-color: #444;
+}
+
+.ui-state-default {
+    background: #383838;
+    background-image: none;
+    color: #ddd;
+    border-color: #555;
+}
+
+.ui-state-hover,
+.ui-state-active,
+.ui-state-highlight {
+    background: #40536a;
+    background-image: none;
+    color: #fff;
+    border-color: #60758d;
+}
+
+/* Form elements */
+input,
+select,
+textarea {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Onglets des préférences */
+#prefs-dialog .ui-tabs-nav {
+    background: #292929 !important;
+    border-color: #444 !important;
+}
+
+#prefs-dialog .ui-tabs-nav li {
+    background: #383838 !important;
+    border-color: #555 !important;
+}
+
+#prefs-dialog .ui-tabs-nav li a {
+    color: #ddd !important;
+}
+
+#prefs-dialog .ui-tabs-nav li.ui-tabs-active,
+#prefs-dialog .ui-tabs-nav li.ui-tabs-selected {
+    background: #242424 !important;
+    border-bottom-color: #242424 !important;
+}
+
+/* Boutons jQuery UI */
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button {
+    background: #383838 !important;
+    background-image: none !important;
+    border-color: #555 !important;
+    color: #ddd !important;
+}
+
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-button:hover {
+    background: #484848 !important;
+    color: #fff !important;
+}
+
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    background: #40536a !important;
+    color: #fff !important;
+}
+
+/* Fond des boutons inspecteur */
+#torrent_inspector #inspector-tabs > * {
+    background-color: #383838 !important;
+    border-color: #555 !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Conserver les icônes, retirer les dégradés */
+#torrent_inspector #inspector-tab-info {
+    background-image: url("images/inspector-info.png") !important;
+}
+
+#torrent_inspector #inspector-tab-peers {
+    background-image: url("images/inspector-peers.png") !important;
+}
+
+#torrent_inspector #inspector-tab-trackers {
+    background-image: url("images/inspector-trackers.png") !important;
+}
+
+#torrent_inspector #inspector-tab-files {
+    background-image: url("images/inspector-files.png") !important;
+}
+
+/* Bouton sélectionné */
+#torrent_inspector #inspector-tabs > *.selected {
+    background-color: #40536a !important;
+    border-color: #60758d !important;
+}
+
+/* Survol */
+#torrent_inspector #inspector-tabs > *:hover {
+    background-color: #484848 !important;
+}
+
+div.file-priority-radiobox > * {
+    background-color: #383838 !important;
+    border-color: #555 !important;
+}
+
+div.file-priority-radiobox > div.low {
+    background-image: url("images/file-priority-low.png") !important;
+}
+
+div.file-priority-radiobox > div.normal {
+    background-image: url("images/file-priority-normal.png") !important;
+}
+
+div.file-priority-radiobox > div.high {
+    background-image: url("images/file-priority-high.png") !important;
+}
+
+div.file-priority-radiobox > *.selected {
+    background-color: #40536a !important;
+}
+
+/* Preferences - Tab text */
+#prefs-tab-general a,
+#prefs-tab-speed a,
+#prefs-tab-peers a,
+#prefs-tab-network a {
+    color: #dedede !important;
+    text-shadow: none !important;
+}
+
+/* Active tab */
+#prefs-tab-general.ui-tabs-active a,
+#prefs-tab-speed.ui-tabs-active a,
+#prefs-tab-peers.ui-tabs-active a,
+#prefs-tab-network.ui-tabs-active a {
+    color: #ffffff !important;
+}
+
+/* Footer buttons - Dark background and light icons */
+div.torrent_footer #settings_menu,
+div.torrent_footer #prefs-button,
+div.torrent_footer #turtle-button,
+div.torrent_footer #compact-button {
+    filter: invert(1);
+}
